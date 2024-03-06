@@ -1,0 +1,84 @@
+-- Switching to the ESG_CAPMARKET database
+USE DATABASE ESG_CAPMARKET;
+
+-- Verifying that the table is loaded into the database
+SHOW TABLES LIKE 'TOP1000COMPANIESCAPMARKET';
+SHOW GRANTS;
+
+-- Selecting first 10 rows from the TOP1000COMPANIESCAPMARKET table
+SELECT * 
+FROM TOP1000COMPANIESCAPMARKET AS TCCM
+LIMIT 10;
+
+-- Working on the STOCK column 
+
+-- Discovering the content of the STOCK column
+SELECT STOCK 
+FROM TOP1000COMPANIESCAPMARKET TCCM;
+
+-- Splitting the STOCK column into two parts
+SELECT 
+  SUBSTRING(STOCK, 1, CHARINDEX(' ',STOCK)-1) AS Stock, 
+  SUBSTRING(STOCK, CHARINDEX(' ',STOCK)+1, LEN(STOCK)) AS NoUse
+FROM TOP1000COMPANIESCAPMARKET;
+
+-- Adding a new column called New_Stock
+ALTER TABLE TOP1000COMPANIESCAPMARKET
+ADD New_Stock NVARCHAR(250);
+
+-- Updating New_Stock column with the first part of the STOCK column
+UPDATE TOP1000COMPANIESCAPMARKET
+SET New_Stock = SUBSTRING(STOCK, 1, CHARINDEX(' ',STOCK)-1);
+
+-- Dropping the old STOCK column
+ALTER TABLE TOP1000COMPANIESCAPMARKET
+DROP COLUMN STOCK;
+
+-- Renaming the New_Stock column to STOCK
+ALTER TABLE TOP1000COMPANIESCAPMARKET
+RENAME COLUMN New_stock TO STOCK;
+
+-- Selecting first 10 rows from the table after transformation
+SELECT *
+FROM TOP1000COMPANIESCAPMARKET
+LIMIT 10; 
+
+-- Transforming MarketCapUSD to a useful value 
+
+-- Adding a new column called converted_market_cap
+ALTER TABLE TOP1000COMPANIESCAPMARKET
+ADD COLUMN converted_market_cap FLOAT;
+
+-- Updating converted_market_cap column based on the suffix in the MARKETCAPUSD column
+UPDATE TOP1000COMPANIESCAPMARKET
+SET converted_market_cap = CASE
+        WHEN MARKETCAPUSD LIKE '%$%' AND MARKETCAPUSD LIKE '% T' THEN
+            CAST(REPLACE(REPLACE(SUBSTRING(MARKETCAPUSD, 1, POSITION(' ' IN MARKETCAPUSD)), '$', ''), ' T', '') AS FLOAT) * POWER(10, 12)
+        WHEN MARKETCAPUSD LIKE '%$%' AND MARKETCAPUSD LIKE '% B' THEN
+            CAST(REPLACE(REPLACE(SUBSTRING(MARKETCAPUSD, 1, POSITION(' ' IN MARKETCAPUSD)), '$', ''), ' B', '') AS FLOAT) * POWER(10, 9)
+        WHEN MARKETCAPUSD LIKE '%$%' AND MARKETCAPUSD LIKE '% M' THEN
+            CAST(REPLACE(REPLACE(SUBSTRING(MARKETCAPUSD, 1, POSITION(' ' IN MARKETCAPUSD)), '$', ''), ' M', '') AS FLOAT) * POWER(10, 6)
+        WHEN MARKETCAPUSD LIKE '%$%' AND MARKETCAPUSD LIKE '% K' THEN
+            CAST(REPLACE(REPLACE(SUBSTRING(MARKETCAPUSD, 1, POSITION(' ' IN MARKETCAPUSD)), '$', ''), ' K', '') AS FLOAT) * POWER(10, 3)
+        ELSE
+            CAST(REPLACE(SUBSTRING(MARKETCAPUSD, 1, POSITION(' ' IN MARKETCAPUSD)), '$', '') AS FLOAT)
+    END;
+
+-- Dropping the MARKETCAPUSD column
+ALTER TABLE TOP1000COMPANIESCAPMARKET
+DROP MARKETCAPUSD;
+
+-- Renaming the converted_market_cap column to MARKET_CAP_USD
+ALTER TABLE TOP1000COMPANIESCAPMARKET
+RENAME COLUMN CONVERTED_MARKET_CAP TO MARKET_CAP_USD;
+
+-- Selecting first 10 rows from the table after transformation
+SELECT * 
+FROM TOP1000COMPANIESCAPMARKET
+LIMIT 10;
+
+-- Selecting all rows from the table
+SELECT * 
+FROM TOP1000COMPANIESCAPMARKET;
+
+

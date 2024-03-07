@@ -1,0 +1,65 @@
+﻿COMPANY,COUNTRY,SECTOR,INDUSTRY,ESGSCORE,MARKETCATEGORY,STOCK,MARKET_CAP_USD
+Visa Inc.,United States,Commercial Services,Miscellaneous Commercial Services,64,Mega,"V
+",530200000000
+"Cisco Systems, Inc.",United States,Electronic Technology,Telecommunications Equipment,66,Mega,"CSCO
+",205210000000
+Texas Instruments Incorporated,United States,Electronic Technology,Semiconductors,67,Large,"TXN
+",151390000000
+General Electric Company,United States,Producer Manufacturing,Industrial Machinery,65,Large,"GE
+",135680000000
+"Applied Materials, Inc.",United States,Producer Manufacturing,Industrial Machinery,70,Large,"AMAT
+",125870000000
+Canadian National Railway Company,Canada,Transportation,Railroads,67,Large,"CNR
+",82170000000
+Canadian Pacific Railway Limited,Canada,Transportation,Railroads,66,Large,"CP
+",74550000000
+Canadian Natural Resources Limited,Canada,Energy Minerals,Oil & Gas Production,68,Large,"CNQ
+",74040000000
+"Arista Networks, Inc.",United States,Electronic Technology,Computer Peripherals,66,Large,"ANET
+",71730000000
+"Cadence Design Systems, Inc.",United States,Technology Services,Packaged Software,66,Large,"CDNS
+",69990000000
+Colgate-Palmolive Company,United States,Consumer Non-Durables,Household/Personal Care,69,Large,"CL
+",66150000000
+Phillips 66,United States,Energy Minerals,Oil Refining/Marketing,66,Large,"PSX
+",59720000000
+Trane Technologies plc,Ireland,Producer Manufacturing,Industrial Conglomerates,64,Large,"TT
+",54540000000
+Kering SA,France,Consumer Non-Durables,Apparel/Footwear,64,Large,"KER
+",53320000000
+Reckitt Benckiser Group plc,United Kingdom,Consumer Non-Durables,Household/Personal Care,65,Large,"RKT
+",50090000000
+Newmont Corporation,United States,Non-Energy Minerals,Precious Metals,66,Large,"NEM
+",46240000000
+Hess Corporation,United States,Energy Minerals,Integrated Oil,65,Large,"HES
+",45400000000
+"Fortinet, Inc.",United States,Electronic Technology,Computer Communications,68,Large,"FTNT
+",44840000000
+Edwards Lifesciences Corporation,United States,Health Technology,Medical Specialties,68,Large,"EW
+",44590000000
+Suncor Energy Inc.,Canada,Energy Minerals,Integrated Oil,65,Large,"SU
+",44320000000
+Beiersdorf AG,Germany,Consumer Non-Durables,Household/Personal Care,70,Large,"BEI
+",33760000000
+VERBUND AG,Austria,Utilities,Electric Utilities,67,Large,"OEW
+",32660000000
+Goodman Group,Australia,Finance,Real Estate Investment Trusts,67,Large,"GMG
+",31460000000
+ASSA ABLOY AB,Sweden,Producer Manufacturing,Industrial Machinery,64,Large,"ALZ
+",30890000000
+3i Group plc,United Kingdom,Finance,Investment Managers,64,Large,"III
+",28410000000
+Xylem Inc.,United States,Producer Manufacturing,Industrial Machinery,68,Large,"XYL
+",27080000000
+"HubSpot, Inc.",United States,Technology Services,Packaged Software,64,Large,"HUBS
+",26840000000
+Schindler Holding AG,Switzerland,Producer Manufacturing,Industrial Machinery,67,Large,"SCHN
+",25790000000
+Weyerhaeuser Company,United States,Finance,Real Estate Investment Trusts,68,Large,"WY
+",24860000000
+Geberit AG,Switzerland,Producer Manufacturing,Building Products,68,Large,"GEBN
+",20530000000
+"J.B. Hunt Transport Services, Inc.",United States,Transportation,Trucking,64,Large,"JBHT
+",19800000000
+"Align Technology, Inc.",United States,Health Technology,Medical Specialties,64,Large,"ALGN
+",19620000000
